@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="heA-ix-daU">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up-->
+        <scene sceneID="1Sk-vx-cSp">
+            <objects>
+                <viewController title="Sign Up" automaticallyAdjustsScrollViewInsets="NO" id="CNN-UJ-fZL" customClass="SignupViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x58-Sc-ziO"/>
+                        <viewControllerLayoutGuide type="bottom" id="GNX-9C-k21"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VgW-Ql-Yus">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcg-dB-V46" customClass="VCenteredContentScrollView" customModule="FirebaseChat" customModuleProvider="target">
+                                <connections>
+                                    <outlet property="containerView" destination="VPI-Kq-jgE" id="86w-2B-05R"/>
+                                    <outlet property="contentView" destination="5CW-RX-DIc" id="Ob0-8b-8j3"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xcg-dB-V46" firstAttribute="top" secondItem="x58-Sc-ziO" secondAttribute="bottom" id="5ev-yW-nOf"/>
+                            <constraint firstAttribute="trailing" secondItem="Xcg-dB-V46" secondAttribute="trailing" id="PvW-mn-O0K"/>
+                            <constraint firstItem="GNX-9C-k21" firstAttribute="top" secondItem="Xcg-dB-V46" secondAttribute="bottom" id="RpO-Cb-DZ7"/>
+                            <constraint firstItem="Xcg-dB-V46" firstAttribute="leading" secondItem="VgW-Ql-Yus" secondAttribute="leading" id="t4g-ov-HI0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordFormSection" destination="Nv4-95-Kzf" id="ixM-vs-Jcv"/>
+                        <outlet property="emailFormSection" destination="czo-of-QFN" id="WV8-xe-Di4"/>
+                        <outlet property="nameFormSection" destination="vFw-D5-QWq" id="A1I-0f-jGe"/>
+                        <outlet property="passwordFormSection" destination="rFe-gQ-hM1" id="VME-YS-5a5"/>
+                        <outlet property="scrollView" destination="Xcg-dB-V46" id="Wnr-vX-iUS"/>
+                        <segue destination="nNV-EX-DJ7" kind="presentation" identifier="GotoContactsStoryboard" id="Aoj-YN-F6O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIk-4I-686" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="VPI-Kq-jgE">
+                    <rect key="frame" x="0.0" y="0.0" width="384" height="501"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-RX-DIc">
+                            <frame key="frameInset" minX="20" minY="236" width="344" height="314"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czo-of-QFN" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" width="344" height="71"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="e-mail"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="username@domain.com"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-gQ-hM1" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" minY="71" width="344" height="71"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value=" "/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-95-Kzf" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" minY="142" width="344" height="71"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Retype Password"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vFw-D5-QWq" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" minY="213" width="344" height="71"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Full Name"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-2O-c7f">
+                                    <frame key="frameInset" minY="284" width="344" height="30"/>
+                                    <state key="normal" title="Create Account &amp; Sign In"/>
+                                    <connections>
+                                        <action selector="tappedCreateUserButton:" destination="CNN-UJ-fZL" eventType="touchUpInside" id="GUU-kW-QEq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="5CW-RX-DIc" firstAttribute="leading" secondItem="VPI-Kq-jgE" secondAttribute="leading" constant="20" symbolic="YES" placeholder="YES" id="DEf-gR-W5k"/>
+                        <constraint firstAttribute="trailing" secondItem="5CW-RX-DIc" secondAttribute="trailing" constant="20" symbolic="YES" placeholder="YES" id="LDk-Qr-JFf"/>
+                        <constraint firstItem="5CW-RX-DIc" firstAttribute="centerY" secondItem="VPI-Kq-jgE" secondAttribute="centerY" placeholder="YES" id="yG7-Ai-wba"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="812" y="-782"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="dhg-cJ-aHK">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9qg-n6-1BP" customClass="SignInViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ej-GJ-q7q"/>
+                        <viewControllerLayoutGuide type="bottom" id="pdO-vf-3sg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iwU-nq-OqE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="254" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="Iqm-Vp-H5u" customClass="VCenteredContentScrollView" customModule="FirebaseChat" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ysJ-fu-tyw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ysJ-fu-tyw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="containerView" destination="Hsy-36-vFD" id="NcS-mx-wwM"/>
+                                    <outlet property="contentView" destination="IYM-1E-QBJ" id="MHd-So-78w"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pdO-vf-3sg" firstAttribute="top" secondItem="Iqm-Vp-H5u" secondAttribute="bottom" id="6EY-Rh-PDJ"/>
+                            <constraint firstItem="Iqm-Vp-H5u" firstAttribute="top" secondItem="9Ej-GJ-q7q" secondAttribute="bottom" id="7Va-tO-edN"/>
+                            <constraint firstItem="Iqm-Vp-H5u" firstAttribute="leading" secondItem="iwU-nq-OqE" secondAttribute="leading" id="cvE-P4-2zp"/>
+                            <constraint firstAttribute="trailing" secondItem="Iqm-Vp-H5u" secondAttribute="trailing" id="ibA-uH-NeF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign In" id="cqJ-bi-S9h"/>
+                    <connections>
+                        <outlet property="emailFormSection" destination="Om2-tn-szL" id="iaV-UB-Fdt"/>
+                        <outlet property="passwordFormSection" destination="hUU-lB-D4x" id="zXc-az-mZy"/>
+                        <outlet property="scrollView" destination="Iqm-Vp-H5u" id="Fhl-JV-qh0"/>
+                        <segue destination="nNV-EX-DJ7" kind="presentation" identifier="GotoContactsStoryboard" id="ib9-8K-8RJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvf-9j-VwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Hsy-36-vFD">
+                    <rect key="frame" x="0.0" y="0.0" width="384" height="501"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-1E-QBJ">
+                            <frame key="frameInset" minX="8" minY="236" width="368" height="192"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-tn-szL" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" width="368" height="71"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="e-mail"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="username@domain.com"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-lB-D4x" customClass="TextFieldForm" customModule="FirebaseChat" customModuleProvider="target">
+                                    <frame key="frameInset" minY="71" width="368" height="71"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value=" "/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cz1-CT-17f">
+                                    <frame key="frameInset" minY="142" width="368" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-cK-quL">
+                                            <frame key="frameInset" width="55" height="50"/>
+                                            <state key="normal" title="Sign Up"/>
+                                            <connections>
+                                                <segue destination="CNN-UJ-fZL" kind="show" id="X0P-eL-fLb"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ij-ao-g24">
+                                            <frame key="frameInset" minX="55" width="266" height="50"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-Kn-e86">
+                                            <frame key="frameInset" minX="321" width="47" height="50"/>
+                                            <state key="normal" title="Sign In"/>
+                                            <connections>
+                                                <action selector="tappedSignInButton:" destination="9qg-n6-1BP" eventType="touchUpInside" id="Op8-w2-vFG"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="IYM-1E-QBJ" firstAttribute="centerY" secondItem="Hsy-36-vFD" secondAttribute="centerY" placeholder="YES" id="Da8-4c-4RQ"/>
+                        <constraint firstItem="IYM-1E-QBJ" firstAttribute="trailing" secondItem="Hsy-36-vFD" secondAttribute="trailingMargin" placeholder="YES" id="SWA-CP-82O"/>
+                        <constraint firstItem="IYM-1E-QBJ" firstAttribute="leading" secondItem="Hsy-36-vFD" secondAttribute="leadingMargin" placeholder="YES" id="ncR-GJ-8Kt"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="63" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2kp-aM-G7R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="heA-ix-daU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eY-LQ-jsb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9qg-n6-1BP" kind="relationship" relationship="rootViewController" id="M2j-Vf-x4p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="es3-Yh-GJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="0.0"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="b1t-Se-OdU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contacts" id="nNV-EX-DJ7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIc-nG-AM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="0.0"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ib9-8K-8RJ"/>
+    </inferredMetricsTieBreakers>
+</document>
